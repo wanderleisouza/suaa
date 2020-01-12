@@ -1,0 +1,18 @@
+server:
+  port: 8282
+
+spring:
+  security:
+    user:
+      name: john-doe
+      password: anonymous123
+      roles: USER, ADMIN
+
+security:
+  oauth2:
+    client:
+      client-id: my-mobile-app
+      client-secret: mobileme
+      access-token-validity-seconds: 3600
+      authorized-grant-types: authorization_code,password,refresh_token,client_credentials
+      scope: READ,WRITE
