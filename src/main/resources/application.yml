@@ -16,3 +16,5 @@ security:
       access-token-validity-seconds: 3600
       authorized-grant-types: authorization_code,password,refresh_token,client_credentials
       scope: READ,WRITE
+    authorization:
+      check-token-access: permitAll

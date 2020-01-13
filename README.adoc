@@ -11,7 +11,7 @@
 === Application.yml file
 
 	server:
-  	  port: 8282
+	  port: 8282
 	spring:
 	  security:
 	    user:
@@ -26,7 +26,12 @@
 	      access-token-validity-seconds: 3600
 	      authorized-grant-types: authorization_code,password,refresh_token,client_credentials
 	      scope: READ,WRITE
+	    authorization:
+	      check-token-access: permitAll
 	      
 === cURL test 
 
 	curl --silent --location --request POST 'localhost:8282/oauth/token?grant_type=password&username=john-doe&password=anonymous123' --header 'Authorization: Basic bXktbW9iaWxlLWFwcDptb2JpbGVtZQ==' | pjson 
+
+	curl --location --request GET 'localhost:8282/oauth/check_token?token=1433cf88-757d-4cc4-a7ed-8dafe4dbc86b' \
+--header 'Authorization: Basic bXktbW9iaWxlLWFwcDptb2JpbGVtZQ=='
