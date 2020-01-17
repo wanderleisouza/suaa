@@ -1,18 +1,18 @@
 server:
-  port: 8282
+  port: 9191
 
 spring:
   security:
     user:
-      name: john-doe
-      password: anonymous123
-      roles: USER, ADMIN
+      name: jane-doe
+      password: jane-doe123
+      roles: USER
 
 security:
   oauth2:
     client:
-      client-id: my-mobile-app
-      client-secret: mobileme
+      client-id: app-mobile
+      client-secret: app-mobile123
       access-token-validity-seconds: 3600
       authorized-grant-types: authorization_code,password,refresh_token,client_credentials
       scope: READ,WRITE
