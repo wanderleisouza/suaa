@@ -16,17 +16,17 @@ see `application.yml` file
 
 *Grant Type: client_credentials*
 
-	curl -s -X POST -u "app-mobile:app-mobile123" -d "grant_type=client_credentials" localhost:9191/oauth/token | pjson
+	curl -s -X POST -u "app-mobile:app-mobile123" -d "grant_type=client_credentials" localhost:9191/oauth/token | jq . 
 
 *Grant Type: password*  
 
-	curl -s -X POST -u 'app-mobile:app-mobile123' 'localhost:9191/oauth/token?grant_type=password&username=jane-doe&password=jane-doe123&scope=READ' | pjson
+	curl -s -X POST -u 'app-mobile:app-mobile123' 'localhost:9191/oauth/token?grant_type=password&username=jane-doe&password=jane-doe123&scope=READ' | jq . 
 
 *Refresh Token*
 
-	curl -X POST -u "app-mobile:app-mobile123" -d "grant_type=refresh_token&refresh_token=438fa86b-9174-4ae6-a8fe-faa9981955f3" http://localhost:9191/oauth/token
+	curl -X POST -u "app-mobile:app-mobile123" -d "grant_type=refresh_token&refresh_token=438fa86b-9174-4ae6-a8fe-faa9981955f3" http://localhost:9191/oauth/token | jq . 
 
 *Check Token*
 
-	curl -s -u 'app-mobile:app-mobile123' 'localhost:9191/oauth/check_token?token=ecc66471-0508-4855-adf4-4238559b0921' | pjson
+	curl -s -u 'app-mobile:app-mobile123' 'localhost:9191/oauth/check_token?token=ecc66471-0508-4855-adf4-4238559b0921' | jq . 
 		
